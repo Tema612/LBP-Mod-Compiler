@@ -10,8 +10,8 @@
 
                         <TextBlock Text="{TemplateBinding Content}"
 									   VerticalAlignment="Center" Margin="64,0,0,0"/>
-                    </Grid>
 
+                    </Grid>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -20,15 +20,15 @@
         <Setter Property="BorderThickness" Value="0"/>
         <Style.Triggers>
             <Trigger Property="IsChecked" Value="True">
-                <Setter Property="Background" Value="#801E6282"/>
+                <Setter Property="Background" Value="#805298DF"/>
             </Trigger>
         </Style.Triggers>
 
     </Style>
 
     <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" x:Key="Background">
-        <GradientStop Color="#981E5F7E" Offset="0"></GradientStop>
-        <GradientStop Color="#9756B5D2" Offset="1"></GradientStop>
+        <GradientStop Color="#805298DF" Offset="0"></GradientStop>
+        <GradientStop Color="#8048E5E1" Offset="1"></GradientStop>
     </LinearGradientBrush>
 
 </ResourceDictionary>

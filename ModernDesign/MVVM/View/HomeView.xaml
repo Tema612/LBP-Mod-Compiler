@@ -3,9 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:ModernDesign.MVVM.View"
+             xmlns:local="clr-namespace:ModernDesign.MVVM.View" xmlns:core="clr-namespace:ModernDesign.Core" xmlns:viewmodel="clr-namespace:ModernDesign.MVVM.ViewModel" d:DataContext="{d:DesignInstance Type=core:ObservableObject}"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+
     <UserControl.Resources>
     </UserControl.Resources>
     <Grid>
@@ -132,7 +133,19 @@
             </Button.Resources>
         </Button>
         <Image HorizontalAlignment="Left" Height="299" VerticalAlignment="Top" Width="337" Margin="203,51,0,0" Source="/Images/sackboy.png"/>
-        
+        <Button Content="Choose mod folder" FontSize="18" FontFamily="/Fonts/#Eigerdals Heavy" HorizontalAlignment="Left" VerticalAlignment="Top" Width="189" Style="{DynamicResource EditorButton}" Height="59" Margin="472,10,0,0" Click="Button_Click_4">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"></Setter>
+                    <Style.Triggers>
+                        <EventTrigger RoutedEvent="PreviewMouseDown">
+                            <SoundPlayerAction Source="/Select.wav"></SoundPlayerAction>
+                        </EventTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Resources>
+        </Button>
+
 
 
     </Grid>

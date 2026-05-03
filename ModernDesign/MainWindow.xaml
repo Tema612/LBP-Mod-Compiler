@@ -6,7 +6,8 @@
         xmlns:fa="http://awesome-inc.com"
         xmlns:local="clr-namespace:ModernDesign"
 	    xmlns:view="clr-namespace:ModernDesign.MVVM.View"
-					 xmlns:viewModel="clr-namespace:ModernDesign.MVVM.ViewModel"
+        xmlns:viewModel="clr-namespace:ModernDesign.MVVM.ViewModel"
+        
         mc:Ignorable="d"
         Title="LBP Mod Compiler v2.0" Height="600" Width="920"
 		WindowStyle="None"
@@ -14,13 +15,18 @@
 		ResizeMode="NoResize"
 		Background="Transparent">
 
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="64"
+                      ResizeBorderThickness="{x:Static SystemParameters.WindowResizeBorderThickness}" />
+    </WindowChrome.WindowChrome>
+
 
     <Window.DataContext>
         <viewModel:MainViewModel></viewModel:MainViewModel>
     </Window.DataContext>
 
 
-    <Border Background="#272537" CornerRadius="20">
+    <Border CornerRadius="20" Background="{DynamicResource Background}">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200"></ColumnDefinition>
@@ -38,7 +44,7 @@
 					   Foreground="White"
 					   FontSize="18" RenderTransformOrigin="0.5,0.5"
 					   FontFamily="/Fonts/#Eigerdals Heavy"
-					   Grid.Row="0" Grid.ColumnSpan="2" Margin="65,20,694,29">
+					   Grid.Row="0" Grid.ColumnSpan="2" Margin="67,23,692,26">
                 <TextBlock.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -54,9 +60,9 @@
 							 Foreground="White"
 							 FontSize="22"
 							 FontFamily="/Fonts/#CoreBandiFace"
-							 Style="{StaticResource MenuButton}"
+							 Style="{DynamicResource MenuButton}"
 							 IsChecked="True"
-                             Command="{Binding HomeViewCommand}">
+                             Command="{Binding HomeViewCommand}" Checked="RadioButton_Checked">
                     <RadioButton.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="20"></Setter>
@@ -75,7 +81,7 @@
 		Foreground="White"
 		FontSize="22"
 		FontFamily="/Fonts/#CoreBandiFace"
-		Style="{StaticResource ConfigButton}"
+		Style="{DynamicResource MenuButton}"
                              Command="{Binding ConfigViewCommand}">
                     <RadioButton.Resources>
                         <Style TargetType="Border">
@@ -89,9 +95,29 @@
                     </RadioButton.Triggers>
                 </RadioButton>
 
+                <RadioButton Content="Themes"
+		Height="50"
+		Foreground="White"
+		FontSize="22"
+		FontFamily="/Fonts/#CoreBandiFace"
+		Style="{DynamicResource MenuButton}"
+                             Command="{Binding ThemeViewCommand}">
+                    <RadioButton.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="20"></Setter>
+                        </Style>
+                    </RadioButton.Resources>
+                    <RadioButton.Triggers>
+                        <EventTrigger RoutedEvent="RadioButton.Click">
+                            <SoundPlayerAction Source="/menu.wav" />
+                        </EventTrigger>
+                    </RadioButton.Triggers>
+                </RadioButton>
+
+
             </StackPanel>
             <ContentControl Grid.Row="1" Margin="10" Content="{Binding CurrentView}" Grid.Column="1" x:Name="MainView"/>
-            <Button Content="&#xf011;" Background="Transparent" Grid.Column="1" Margin="636,5,10,520" FontFamily="Fonts/#Font Awesome 6 Free Solid" FontSize="50" Grid.RowSpan="2" Foreground="White" Click="Button_Click">
+            <Button Content="&#xf011;" Background="Transparent" Grid.Column="1" Margin="636,5,10,520" FontFamily="Fonts/#Font Awesome 6 Free Solid" FontSize="50" Grid.RowSpan="2" Foreground="White" Click="Button_Click" WindowChrome.IsHitTestVisibleInChrome="True">
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Border Background="{TemplateBinding Background}" 

@@ -4,14 +4,14 @@
              xmlns:local="clr-namespace:ModernDesign"
 			 xmlns:view="clr-namespace:ModernDesign.MVVM.View"
 			 xmlns:viewModel="clr-namespace:ModernDesign.MVVM.ViewModel"
-             xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Classic" x:Class="ModernDesign.App"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Theme/MenuButton.xaml"/>
-                <ResourceDictionary Source="Theme/ConfigButton.xaml"/>
                 <ResourceDictionary Source="Theme/EditorButton.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="Theme/MenuButton.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="Theme/MenuButton-LBP2.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="Theme/MenuButton-LBP3.xaml"></ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
             <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
                 <view:HomeView/>
@@ -20,7 +20,11 @@
             <DataTemplate DataType="{x:Type viewModel:ConfigViewModel}">
                 <view:ConfigView/>
             </DataTemplate>
-           
+
+            <DataTemplate DataType="{x:Type viewModel:ThemeViewModel}">
+                <view:ThemeView></view:ThemeView>
+            </DataTemplate>
+
 
         </ResourceDictionary>
 

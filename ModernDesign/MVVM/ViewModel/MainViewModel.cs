@@ -1,9 +1,4 @@
 ﻿using ModernDesign.Core;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ModernDesign.MVVM.ViewModel
 {
@@ -13,9 +8,13 @@ namespace ModernDesign.MVVM.ViewModel
         public RelayCommand HomeViewCommand { get; set; }
         public RelayCommand ConfigViewCommand { get; set; }
 
+        public RelayCommand ThemeViewCommand { get; set; }
+
         public HomeViewModel HomeVm { get; set; }
 
         public ConfigViewModel ConfigVm { get; set; }
+
+        public ThemeViewModel ThemeVm { get; set; }
 
         private object _currentView;
 
@@ -34,6 +33,7 @@ namespace ModernDesign.MVVM.ViewModel
         {
             HomeVm = new HomeViewModel();
             ConfigVm = new ConfigViewModel();
+            ThemeVm = new ThemeViewModel();
             CurrentView = HomeVm; 
 
             HomeViewCommand = new RelayCommand(o => 
@@ -44,6 +44,11 @@ namespace ModernDesign.MVVM.ViewModel
             ConfigViewCommand = new RelayCommand(o =>
             {
                 CurrentView = ConfigVm;
+            });
+
+            ThemeViewCommand = new RelayCommand(o =>
+            {
+                CurrentView = ThemeVm;
             });
         }
 

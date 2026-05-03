@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{8C0BD198-DF9D-40F3-8C42-B8714FC06F9A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>LBPMC</RootNamespace>
+    <RootNamespace>ModernDesign</RootNamespace>
     <AssemblyName>LittleBigPlanet Mod Compiler</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -85,13 +85,33 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Theme\ConfigButton.xaml">
+    <Page Include="MVVM\View\ThemeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\unused3.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Theme\unused2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Theme\unused.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Theme\EditorButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\MenuButton-LBP3.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Theme\MenuButton-LBP2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Theme\MenuButton.xaml">
       <SubType>Designer</SubType>
@@ -100,13 +120,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MVVM\ViewModel\ConfigViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\FolderVM.cs" />
     <Compile Include="MVVM\ViewModel\HomeViewModel.cs" />
     <Compile Include="MVVM\ViewModel\MainViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\ThemeViewModel.cs" />
     <Compile Include="MVVM\View\ConfigView.xaml.cs">
       <DependentUpon>ConfigView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\HomeView.xaml.cs">
       <DependentUpon>HomeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\ThemeView.xaml.cs">
+      <DependentUpon>ThemeView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -156,7 +181,10 @@
   <ItemGroup>
     <Content Include="exit.wav" />
     <Resource Include="icon.ico" />
+    <Resource Include="Images\Toggle.png" />
     <Content Include="menu.wav" />
+    <Content Include="open.wav" />
+    <Content Include="save.wav" />
     <Content Include="Select.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

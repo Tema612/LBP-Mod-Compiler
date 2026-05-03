@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LBPMC.Properties {
+namespace ModernDesign.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

@@ -1,0 +1,4 @@
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#9870BCD6" Offset="0"></GradientStop>
+                    <GradientStop Color="#9756B5D2" Offset="1"></GradientStop>
+                </LinearGradientBrush>
